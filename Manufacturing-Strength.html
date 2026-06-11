@@ -1,0 +1,357 @@
+    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+    	body{
+    		background: black;
+    	}
+        .manufacturing-section {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        .section-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-heading h2 {
+            font-family: 'Saira', 'Inter', system-ui, -apple-system, sans-serif;
+		    font-size: 3.8rem;
+		    font-weight: 900;
+		    text-transform: uppercase;
+		    font-style: italic;
+		    line-height: 1em;
+		    -webkit-text-stroke-width: 1px;
+		    stroke-width: 1px;
+		    -webkit-text-stroke-color: #fff;
+		    stroke: #fff;
+		    color: transparent;
+        }
+
+        .strength-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            align-items: stretch;
+        }
+
+        .description-col {
+            flex: 1.2;
+            min-width: 260px;
+        }
+
+        .description-card {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .description-text {
+            font-family: 'Saira', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #808080;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        .stats-col {
+            flex: 1.8;
+            min-width: 300px;
+        }
+
+        .stats-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: space-between;
+            height: 100%;
+            align-items: center;
+        }
+
+        .stat-card {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .stat-number {
+        	font-family: 'Saira', 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .stat-number .number {
+        	font-family: 'Saira', 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 3.8rem;
+            font-weight: 900;
+            background: linear-gradient(145deg, #1a4b6e, #2c6e96);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-style:italic;
+        }
+
+        .stat-number .suffix {
+        	font-family: 'Saira', 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 3.8rem;
+            font-weight: 800;
+            color: #2c5f7e;
+            font-style:italic;
+        }
+
+        .stat-label {
+            font-family: 'Saira', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: capitalize !important;
+            letter-spacing: 0.08em;
+            color: #5a6e7c;
+            font-style:italic;
+        }
+
+        @media (max-width: 900px) {
+            .manufacturing-section {
+                padding: 3rem 1.5rem;
+            }
+            .section-heading h2 {
+                font-size: 2.5rem;
+            }
+            .description-text {
+                font-size: 1rem;
+            }
+            .stat-number .number {
+                font-size: 2.8rem;
+            }
+            .stat-number {
+                font-size: 2.8rem;
+            }
+            .stat-number .suffix {
+                font-size: 1.5rem;
+            }
+            .stat-card {
+                padding: 1.5rem 0.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .strength-grid {
+                flex-direction: column;
+                gap: 1.8rem;
+            }
+            .description-col, .stats-col {
+                flex: auto;
+            }
+            .stats-wrapper {
+                justify-content: center;
+            }
+            .stat-card {
+                min-width: 170px;
+                flex: 1 1 170px;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .stats-wrapper {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .stat-card {
+                width: 100%;
+            }
+            .stat-number .number {
+                font-size: 3rem;
+            }
+            .section-heading h2 {
+                font-size: 2rem;
+            }
+            .description-card {
+                padding: 1.5rem;
+            }
+        }
+
+        .manufacturing-section {
+            position: relative;
+        }
+        .manufacturing-section::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: -5%;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(44,95,126,0.03) 0%, rgba(0,0,0,0) 70%);
+            pointer-events: none;
+            border-radius: 50%;
+        }
+    </style>
+    <div class="manufacturing-section">
+        <div class="section-heading">
+            <h2>MANUFACTURING STRENGTH</h2>
+        </div>
+
+        <div class="strength-grid">
+            <div class="description-col">
+                <div class="description-card">
+                    <p class="description-text">Avoid the hassle of design and sourcing. We customize our blanks with your labels, logos, and more to make them one-of-a-kind.</p>
+                </div>
+            </div>
+
+            <div class="stats-col">
+                <div class="stats-wrapper">
+                    <div class="stat-card" data-target="100">
+                        <div class="stat-number">
+                            <span class="number counter-value" data-count="100">0</span>
+                            <span class="suffix">+</span>
+                        </div>
+                        <div class="stat-label">Machinery</div>
+                    </div>
+
+                    <div class="stat-card" data-target="150">
+                        <div class="stat-number">
+                            <span class="number counter-value" data-count="150">0</span>
+                            <span class="suffix">+</span>
+                        </div>
+                        <div class="stat-label">Workers</div>
+                    </div>
+
+                    <div class="stat-card" data-target="10">
+                        <div class="stat-number">
+                            <span class="number counter-value" data-count="10">0</span>
+                            <span class="suffix">K</span>
+                        </div>
+                        <div class="stat-label">Product Range</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const counters = document.querySelectorAll('.counter-value');
+            
+            function animateCounter(element, targetValue, duration = 1800) {
+                if (element.getAttribute('data-animated') === 'true') return;
+                
+                let start = 0;
+                const stepTime = 16; // ~60fps
+                const totalSteps = Math.ceil(duration / stepTime);
+                let currentStep = 0;
+                let animationId = null;
+                
+                function updateNumber() {
+                    currentStep++;
+                    let currentVal;
+                    if (currentStep >= totalSteps) {
+                        currentVal = targetValue;
+                        element.innerText = currentVal;
+                        element.setAttribute('data-animated', 'true');
+                        if (animationId) cancelAnimationFrame(animationId);
+                        return;
+                    }
+                    const progress = currentStep / totalSteps;
+                    const easeOut = 1 - Math.pow(1 - progress, 2);
+                    currentVal = Math.floor(easeOut * targetValue);
+                    element.innerText = currentVal;
+                    animationId = requestAnimationFrame(updateNumber);
+                }
+                
+                element.innerText = '0';
+                updateNumber();
+            }
+            
+            counters.forEach(counter => {
+                const targetRaw = counter.getAttribute('data-count');
+                if (!targetRaw) return;
+                const targetNum = parseInt(targetRaw, 10);
+                if (isNaN(targetNum)) return;
+                counter._target = targetNum;
+                counter.innerText = '0';
+                counter.setAttribute('data-animated', 'false');
+            });
+            
+            const observerOptions = {
+                threshold: 0.3,
+                rootMargin: "0px 0px -30px 0px"
+            };
+            
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counterSpan = entry.target;
+                        if (counterSpan.getAttribute('data-animated') === 'true') {
+                            obs.unobserve(counterSpan);
+                            return;
+                        }
+                        const targetVal = counterSpan._target;
+                        if (targetVal !== undefined && !isNaN(targetVal)) {
+                            animateCounter(counterSpan, targetVal, 1800);
+                        }
+                        obs.unobserve(counterSpan);
+                    }
+                });
+            }, observerOptions);
+            
+            function startVisibleCounters() {
+                counters.forEach(counter => {
+                    const rect = counter.getBoundingClientRect();
+                    const isVisible = rect.top < window.innerHeight - 80 && rect.bottom > 30;
+                    if (isVisible && counter.getAttribute('data-animated') !== 'true') {
+                        const target = counter._target;
+                        if (target !== undefined) {
+                            animateCounter(counter, target, 1800);
+                            counter.setAttribute('data-animated', 'true');
+                        }
+                    } else if (counter.getAttribute('data-animated') !== 'true') {
+                        observer.observe(counter);
+                    } else {
+                        const finalTarget = counter._target;
+                        if (finalTarget !== undefined && counter.innerText != finalTarget) {
+                            counter.innerText = finalTarget;
+                        }
+                    }
+                });
+            }
+            
+            window.addEventListener('load', () => {
+                startVisibleCounters();
+            });
+            
+            window.addEventListener('resize', () => {
+                counters.forEach(counter => {
+                    if (counter.getAttribute('data-animated') === 'true') return;
+                    const rect = counter.getBoundingClientRect();
+                    const isVisible = rect.top < window.innerHeight - 60 && rect.bottom > 20;
+                    if (isVisible) {
+                        const target = counter._target;
+                        if (target !== undefined) {
+                            animateCounter(counter, target, 1800);
+                            counter.setAttribute('data-animated', 'true');
+                            observer.unobserve(counter);
+                        }
+                    }
+                });
+            });
+            
+            setTimeout(() => {
+                counters.forEach(counter => {
+                    if (counter.getAttribute('data-animated') === 'true') return;
+                    const rect = counter.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 40 && rect.bottom > 0) {
+                        const target = counter._target;
+                        if (target !== undefined) {
+                            animateCounter(counter, target, 1600);
+                            counter.setAttribute('data-animated', 'true');
+                        }
+                    }
+                });
+            }, 500);
+        })();
+    </script>

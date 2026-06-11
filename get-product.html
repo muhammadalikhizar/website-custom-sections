@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Zyntex Sports - Premium Sports Gear</title>
+    <!-- Font Awesome 6 (free icons) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Saira", sans-serif;
+            background: #f5f7fc;
+            color: #1e2a3e;
+        }
+
+        /* main container – matches the e-con full width */
+        .sports-hero {
+            background-image: url(https://zyntexsports.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-08-09-at-19.46.26_f5a0f891.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 2rem 2rem 3rem;
+            box-shadow: 0 20px 35px -15px rgba(0,0,0,0.05);
+        }
+
+        /* top bar with decorative line & welcome text */
+        .top-accent {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .divider-line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, #e0e7f0, #b0c4de, #e0e7f0);
+            border-radius: 2px;
+        }
+
+        .welcome-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #f0f4fa;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #134b73;
+            font-weight: 500;
+        }
+
+        .welcome-badge i {
+            color: #ff7b2c;
+            font-size: 0.9rem;
+        }
+
+        /* main 2-column layout */
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .hero-content {
+            flex: 1.2;
+            min-width: 260px;
+            border-right: 2px solid #fff;
+        }
+
+        .hero-slider {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        /* heading style */
+        .main-title {
+            font-size: 80PX;
+            font-weight: 800;
+            font-style: italic;
+            line-height: 1.2;
+            margin: 1rem 0 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .main-title span {
+            background: linear-gradient(120deg, #e35f21, #ff9142);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .sub-head {
+            font-size: 18PX;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+
+        /* icons inline list (like grip lines) */
+        .info-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #2c3e50;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .info-item i {
+            color: #ff7b2c;
+            font-size: 14px;
+        }
+
+        /* button */
+        .btn-recent {
+            background: #1e2f3e;
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .btn-recent i {
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .btn-recent:hover {
+            background: #ff7b2c;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .btn-recent:hover i {
+            transform: translateX(4px);
+        }
+
+        /* image carousel (simplified but modern) */
+        .carousel-container {
+            overflow: hidden;
+            border-radius: 28px;
+            background: #fff;
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+            padding: 0.5rem;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 12px;
+            animation: scrollCarousel 20s linear infinite;
+            width: max-content;
+        }
+
+        .carousel-track img {
+            width: 260px;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: transform 0.3s;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+        }
+
+        .carousel-track img:hover {
+            transform: scale(0.98);
+        }
+
+        @keyframes scrollCarousel {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* pause on hover */
+        .carousel-container:hover .carousel-track {
+            animation-play-state: paused;
+        }
+
+        /* responsive text */
+        @media (max-width: 800px) {
+            .sports-hero {
+                padding: 1.5rem;
+            }
+            .main-title {
+                font-size: 2rem;
+            }
+            .hero-grid {
+                flex-direction: column;
+            }
+            .carousel-track img {
+                width: 210px;
+                height: 170px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .top-accent {
+                flex-direction: column;
+                align-items: start;
+                gap: 10px;
+            }
+            .divider-line {
+                width: 100%;
+            }
+            .info-strip {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* footer style ( subtle ) */
+        .brand-footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #8ba0b0;
+            border-top: 1px solid #e2edf7;
+            padding-top: 2rem;
+        }
+
+        .inline-icon-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 15px 0 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sports-hero">
+    <div class="top-accent">
+        <div class="divider-line"></div>
+    </div>
+    <div class="hero-grid">
+        <div class="hero-content">
+            <div class="info-strip">
+                <div class="info-item"><i class="fas fa-grip-lines-vertical"></i> WELCOME TO WEBSITE NAME <i class="fas fa-grip-lines-vertical"></i></div>
+            </div>
+            <h1 class="main-title">
+                Get Your Products <span>On Factory Prices</span>
+            </h1>
+            <p class="sub-head">
+                Submit your inquiry through our website, including your product details, quantity, and customization requirements.
+            </p>
+        </div>
+
+        <div class="hero-slider">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?w=400&h=300&fit=crop" alt="Sports jersey">
+                    <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=400&h=300&fit=crop" alt="Custom teamwear">
+                    <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=400&h=300&fit=crop" alt="Football kit">
+                    <img src="https://images.unsplash.com/photo-1577212017191-5ad6cbfe6c30?w=400&h=300&fit=crop" alt="Sports uniform">
+                    <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?w=400&h=300&fit=crop" alt="Sports jersey">
+                    <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=400&h=300&fit=crop" alt="Custom teamwear">
+                    <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=400&h=300&fit=crop" alt="Football kit">
+                    <img src="https://images.unsplash.com/photo-1577212017191-5ad6cbfe6c30?w=400&h=300&fit=crop" alt="Sports uniform">
+                </div>
+            </div>
+            <a href="#" class="btn-recent" style="margin-top: 10px;" target="_blank">
+                Our Recent Work <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+    <div class="brand-footer">
+        <i class="fas fa-grip-lines-vertical"></i>
+    </div>
+</div>
+</body>
+</html>

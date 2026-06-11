@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Why Us | Custom Sportswear - Badge Behind Athlete</title>
+  <!-- Google Fonts - clean modern font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Saira", sans-serif;
+      background: #000;
+      color: #1a1a1a;
+    }
+
+    /* MAIN SECTION */
+    .why-us-section {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    /* 3-COLUMN GRID */
+    .three-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .col {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    /* FEATURE ITEM STYLES */
+    .feature-item {
+      margin-bottom: 120px;
+    }
+
+    .feature-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #fff;
+      margin-bottom: 8px;
+    }
+
+    .number {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #e3342f;
+      line-height: 1;
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+
+    .title {
+      font-size: 1.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-style: italic;
+      letter-spacing: 0px;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .desc {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #fff;
+      margin-top: 15px;
+    }
+
+    .desc i {
+      color: #e3342f;
+      margin-right: 8px;
+      width: 20px;
+    }
+
+    /* spacer between features */
+    .spacer {
+      height: 20px;
+    }
+
+    /* ========== CENTER COLUMN - BADGE BEHIND GIRL (athlete) ========== */
+    .center-col {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* container that holds both badge (background) and image */
+    .image-stack {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* "WHY US?" text badge - positioned BEHIND the athlete image */
+    .why-us-badge-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      line-height: 1.0;
+      transform: translate(-50%, -50%);
+      font-size: 8rem;
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+      white-space: nowrap;
+      font-family: "Saira", sans-serif;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* athlete image - sits on TOP of the badge */
+    .athlete-image {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      background: transparent;
+    }
+
+    .athlete-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    /* Optional: subtle overlay to make badge slightly visible behind - but clean design */
+    /* RIGHT COLUMN - reverse layout (number after title, text right-aligned) */
+    .right-col .feature-row {
+      justify-content: flex-end;
+    }
+
+    .right-col .desc {
+      text-align: right;
+      border-left: none;
+      padding-left: 0;
+    }
+
+    .right-col .desc i {
+      margin-right: 0;
+      margin-left: 8px;
+    }
+
+	br {
+	   display: block;
+	   margin: 10px 0;
+	}
+
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .three-columns {
+        flex-direction: column;
+        gap: 50px;
+      }
+      
+      .right-col .feature-row {
+        justify-content: flex-start;
+      }
+      
+      .right-col .desc {
+        text-align: left;
+        border-right: none;
+        border-left: 3px solid #e3342f;
+        padding-left: 16px;
+        padding-right: 0;
+      }
+      
+      .right-col .desc i {
+        margin-left: 0;
+        margin-right: 8px;
+      }
+      
+      .why-us-badge-bg {
+        font-size: 3rem;
+        letter-spacing: 5px;
+        white-space: nowrap;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .why-us-badge-bg {
+        font-size: 2rem;
+        letter-spacing: 3px;
+        white-space: nowrap;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .why-us-section {
+        padding: 50px 16px;
+      }
+      .number {
+        font-size: 2.2rem;
+      }
+      .title {
+        font-size: 1rem;
+      }
+      .why-us-badge-bg {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+      }
+    }
+
+
+    /* ensure badge doesn't overflow on small screens */
+    @media (max-width: 480px) {
+      .why-us-badge-bg {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="why-us-section">
+  <div class="three-columns">
+    
+    <!-- LEFT COLUMN: Features 01 & 02 -->
+    <div class="col left-col">
+      <!-- Feature 01 -->
+      <div class="feature-item">
+        <div class="feature-row">
+          <span class="number">01.</span>
+          <span class="title">100% CUSTOMIZATION</span>
+        </div>
+        <div class="desc">
+          Any color and any design are possible, at absolutely no extra cost!
+        </div>
+      </div>
+      
+      <div class="spacer"></div>
+      
+      <!-- Feature 02 -->
+      <div class="feature-item">
+        <div class="feature-row">
+          <span class="number">02.</span>
+          <span class="title">FAST TURN AROUND</span>
+        </div>
+        <div class="desc">
+          Rush orders available with a turnaround time of as soon as a week.
+        </div>
+      </div>
+    </div>
+    
+    <!-- CENTER COLUMN: "WHY US?" text BEHIND the athlete image -->
+    <div class="col center-col">
+      <div class="image-stack">
+        <!-- Badge (text) - positioned behind the image -->
+        <div class="why-us-badge-bg">WHY<br>US?</div>
+        <!-- Athlete image on top -->
+        <div class="athlete-image">
+          <img 
+            src="https://fibraglobalindustry.com/wp-content/uploads/2025/01/the-studio-shot-of-high-jump-female-athlete-is-in-PRHPR4U.png" 
+            alt="Female high jump athlete - custom sportswear"
+            onerror="this.src='https://placehold.co/600x800/e0e0e0/cc0000?text=Athlete+Image'"
+          >
+        </div>
+      </div>
+    </div>
+    
+    <!-- RIGHT COLUMN: Features 03 & 04 (reverse order: number after title, text right-aligned) -->
+    <div class="col right-col">
+      <!-- Feature 03 -->
+      <div class="feature-item">
+        <div class="feature-row">
+          <span class="title">LOW MINIMUMS</span>
+          <span class="number">03.</span>
+        </div>
+        <div class="desc">
+          No bulk orders required. Order as few as 10 pieces for custom prints.
+        </div>
+      </div>
+      
+      <div class="spacer"></div>
+      
+      <!-- Feature 04 -->
+      <div class="feature-item">
+        <div class="feature-row">
+          <span class="title">ACCURATE COLORS</span>
+          <span class="number">04.</span>
+        </div>
+        <div class="desc">
+          With the help of EPSON, we ensure that you get the exact color.
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+</body>
+</html>

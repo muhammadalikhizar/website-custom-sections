@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Our Production Process - Custom Sportswear</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    /* ========== RESET & BASE ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Saira", sans-serif;
+      background: #ffffff;
+    }
+
+    /* ========== MAIN SECTION ========== */
+    /* Same as original elementor section - full width with background */
+    .production-section {
+      width: 100%;
+      background: linear-gradient(135deg, #f8f9fc 0%, #ffffff 100%);
+      position: relative;
+      padding: 80px 0;
+      background-image: url(https://fibraglobalindustry.com/wp-content/uploads/2025/01/early-morning-workout-young-couple-running-near-th-BF9XEFY.jpg);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+      padding: 6em 1em 6em 1em;
+    }
+
+    /* Background overlay effect (same as original) */
+    .section-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 30%, rgba(227, 52, 47, 0.03) 0%, transparent 60%);
+      pointer-events: none;
+      background-color: transparent;
+      background-image: radial-gradient(at center center, #00000070 0%, #090808 73%);
+      opacity: 1;
+      transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    }
+
+    /* Container - same max-width as original */
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ========== SECTION TITLE ========== */
+    /* Exactly like elementor-heading-title */
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-family: "Saira", Sans-serif;
+    font-size: 3.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-style: italic;
+    line-height: 1em;
+    -webkit-text-stroke-width: 1px;
+    stroke-width: 1px;
+    -webkit-text-stroke-color: #fff;
+    stroke: #fff;
+    color: rgba(0, 0, 0, 0.1);
+}
+    }
+
+    /* Underline decoration */
+    .section-title h2:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 65px;
+      height: 3px;
+      background: #e3342f;
+      border-radius: 2px;
+    }
+
+    /* ========== PROCESS GRID (2 ROWS, 3 COLUMNS EACH) ========== */
+    .process-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .process-row:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Process Card - exactly like original elementor column with background */
+    .process-card {
+      flex: 1;
+      min-width: 280px;
+      background: rgba(14, 17, 21, 0.7);
+      border-radius: 40px 40px 40px 40px;
+      padding: 25px 25px 25px 25px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Inner background overlay (like original elementor-background-overlay) */
+    .process-card .card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 20%, rgba(227, 52, 47, 0.02) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ========== IMAGE / ICON STYLES ========== */
+    /* Same as elementor-widget-image */
+    .process-icon {
+      margin-bottom: -10px;
+    }
+
+    .process-icon img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      border-radius: 50%;
+      padding: 10px;
+    }
+
+    /* ========== TITLE & DESCRIPTION ========== */
+    /* Same as elementor-image-box-title */
+    .process-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #f76c34;
+      font-style: italic;
+      margin-bottom: 12px;
+      line-height: 1.35;
+      letter-spacing: -0.2px;
+    }
+
+    /* Same as elementor-image-box-description */
+    .process-desc {
+      font-size: 1rem;
+      line-height: 1.55;
+      color: #909090;
+      font-weight: 400;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 992px) {
+      .production-section {
+        padding: 60px 0;
+      }
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      .process-card {
+        padding: 28px 20px;
+      }
+      .process-icon img {
+        width: 85px;
+        height: 85px;
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .process-row {
+        flex-direction: column;
+        gap: 25px;
+      }
+      .section-title {
+        margin-bottom: 35px;
+      }
+      .section-title h2 {
+        font-size: 1.7rem;
+      }
+      .process-card {
+        min-width: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .production-section {
+        padding: 45px 0;
+      }
+      .container {
+        padding: 0 16px;
+      }
+      .section-title h2 {
+        font-size: 1.4rem;
+      }
+      .process-icon img {
+        width: 70px;
+        height: 70px;
+        padding: 12px;
+      }
+      .process-title {
+        font-size: 1rem;
+      }
+      .process-desc {
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Subtle animation on load (same as original feel) */
+    .process-card {
+      animation: fadeInUp 0.5s ease backwards;
+    }
+    .process-row:first-child .process-card:nth-child(1) { animation-delay: 0.05s; }
+    .process-row:first-child .process-card:nth-child(2) { animation-delay: 0.1s; }
+    .process-row:first-child .process-card:nth-child(3) { animation-delay: 0.15s; }
+    .process-row:last-child .process-card:nth-child(1) { animation-delay: 0.2s; }
+    .process-row:last-child .process-card:nth-child(2) { animation-delay: 0.25s; }
+    .process-row:last-child .process-card:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="production-section">
+  <div class="section-overlay"></div>
+  <div class="container">
+    
+    <!-- Section Heading - exactly like original -->
+    <div class="section-title">
+      <h2>Our production process</h2>
+    </div>
+
+    <!-- FIRST ROW - 3 cards (Fabric Selection, Pattern Making, Sewing) -->
+    <div class="process-row">
+      <!-- Card 1: Fabric Selection & Design Creation -->
+      <div class="process-card">
+        <div class="card-overlay"></div>
+        <div class="process-icon">
+          <img src="https://fibraglobalindustry.com/wp-content/uploads/2025/02/7377921-200.png" alt="Fabric Selection Icon" loading="lazy">
+        </div>
+        <h3 class="process-title">Fabric Selection &amp; Design Creation</h3>
+        <p class="process-desc">High-performance fabrics are chosen, and dynamic designs are developed to create sportswear that stands out</p>
+      </div>
+
+      <!-- Card 2: Pattern Making & Fabric Cutting -->
+      <div class="process-card">
+        <div class="card-overlay"></div>
+        <div class="process-icon">
+          <img src="https://fibraglobalindustry.com/wp-content/uploads/2025/02/7307435-200.png" alt="Pattern Making Icon" loading="lazy">
+        </div>
+        <h3 class="process-title">Pattern Making &amp; Fabric Cutting</h3>
+        <p class="process-desc">Patterns are meticulously made, designs are professionally printed, and fabrics are expertly cut for perfect results</p>
+      </div>
+
+      <!-- Card 3: Sewing & Finishing -->
+      <div class="process-card">
+        <div class="card-overlay"></div>
+        <div class="process-icon">
+          <img src="https://fibraglobalindustry.com/wp-content/uploads/2025/02/6716551-200.png" alt="Sewing Icon" loading="lazy">
+        </div>
+        <h3 class="process-title">Sewing &amp; Finishing</h3>
+        <p class="process-desc">Each product is sewn with precision and assembled with care, ensuring the highest levels of comfort and durability.</p>
+      </div>
+    </div>
+
+    <!-- SECOND ROW - 3 cards (Quality Control, Packaging, Shipping) -->
+    <div class="process-row">
+      <!-- Card 4: Quality Control Checks -->
+      <div class="process-card">
+        <div class="card-overlay"></div>
+        <div class="process-icon">
+          <img src="https://fibraglobalindustry.com/wp-content/uploads/2025/02/7422827-200.png" alt="Quality Control Icon" loading="lazy">
+        </div>
+        <h3 class="process-title">Quality Control Checks</h3>
+        <p class="process-desc">Detailed inspections at every stage guarantee flawless sportswear that exceeds customer expectations.</p>
+      </div>
+
+      <!-- Card 5: Packaging -->
+      <div class="process-card">
+        <div class="card-overlay"></div>
+        <div class="process-icon">
+          <img src="https://fibraglobalindustry.com/wp-content/uploads/2025/02/7026106-200.png" alt="Packaging Icon" loading="lazy">
+        </div>
+        <h3 class="process-title">Packaging</h3>
+        <p class="process-desc">Products are carefully packed to ensure they arrive safely and in excellent condition.</p>
+      </div>
+
+      <!-- Card 6: Shipping -->
+      <div class="process-card">
+        <div class="card-overlay"></div>
+        <div class="process-icon">
+          <img src="https://fibraglobalindustry.com/wp-content/uploads/2025/02/7380838-200.png" alt="Shipping Icon" loading="lazy">
+        </div>
+        <h3 class="process-title">Shipping</h3>
+        <p class="process-desc">Orders are delivered promptly, ensuring reliable and efficient shipping for all customers.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

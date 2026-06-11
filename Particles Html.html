@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>MIK Services - 360 Solution Company</title>
+    
+    <style>
+
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            background: black;
+        }
+
+        /* Particles Container */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Particles Canvas */
+        #particles-js canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 500%;
+            display: block;
+        }
+
+        /* Content Container */
+        .center-y {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<section id="section-welcome" class="relative full-height overflow-hidden">
+    <!-- Particles Container -->
+    <div id="particles-js"></div>
+</section>
+
+<!-- Particles.js Library -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+    // Function to get day of week (0 = Sunday, 1 = Monday, etc.)
+    function getDayOfWeek() {
+        return new Date().getDay();
+    }
+
+    // Function to set background image based on day
+    function setBackgroundImage() {
+        const dayOfWeek = getDayOfWeek();
+        const backgroundImageUrl = `assets/images-mover/bg/${dayOfWeek}.jpg`;
+        const section = document.getElementById('section-welcome');
+        
+        if (section) {
+            section.style.backgroundImage = `url(${backgroundImageUrl})`;
+            section.style.backgroundSize = 'cover';
+            section.style.backgroundPosition = 'center';
+            section.style.backgroundRepeat = 'no-repeat';
+            console.log(`Background set to: ${backgroundImageUrl}`);
+        }
+    }
+
+    // Initialize Owl Carousel
+    function initCarousel() {
+        if (typeof $.fn.owlCarousel !== 'undefined') {
+            $('#text-carousel').owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                nav: false,
+                dots: true,
+                animateOut: 'fadeOut',
+                animateIn: 'fadeIn'
+            });
+        }
+    }
+
+    // Initialize Particles with all requirements:
+    // 1. Small circles
+    // 2. Lines connecting particles
+    // 3. Mouse hover effect - particles push away (clear area)
+    function initParticles() {
+        if (typeof particlesJS !== 'undefined') {
+            particlesJS('particles-js', {
+                particles: {
+                    number: {
+                        value: 100,           // Number of particles/circles
+                        density: {
+                            enable: true,
+                            value_area: 800    // Area density
+                        }
+                    },
+                    color: {
+                        value: '#ffffff'      // White particles
+                    },
+                    shape: {
+                        type: 'circle',       // Circle shapes
+                        stroke: {
+                            width: 0,
+                            color: '#000000'
+                        },
+                        polygon: {
+                            nb_sides: 5
+                        }
+                    },
+                    opacity: {
+                        value: 0.7,           // Opacity of circles
+                        random: true,         // Random opacity
+                        anim: {
+                            enable: false,
+                            speed: 1,
+                            opacity_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    size: {
+                        value: 2.5,           // SMALL CIRCLES (reduced size)
+                        random: true,         // Random sizes
+                        anim: {
+                            enable: false,
+                            speed: 50,
+                            size_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    line_linked: {
+                        enable: true,         // ENABLE LINES BETWEEN PARTICLES
+                        distance: 200,        // Max distance for connecting lines
+                        color: '#ffffff',
+                        opacity: 0.4,         // Line opacity
+                        width: 1              // Line thickness
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2,             // Movement speed
+                        direction: 'none',
+                        random: false,
+                        straight: false,
+                        out_mode: 'out',      // Particles exit and re-enter
+                        bounce: false,
+                        attract: {
+                            enable: false,
+                            rotateX: 600,
+                            rotateY: 1200
+                        }
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: 'repulse'   // MOUSE CLEAR EFFECT - particles push away
+                        },
+                        onclick: {
+                            enable: false,     // No click effect
+                            mode: 'push'
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        repulse: {
+                            distance: 120,     // How far particles push away from cursor
+                            duration: 0.4     // How long the effect lasts
+                        },
+                        push: {
+                            particles_nb: 4
+                        }
+                    }
+                },
+                retina_detect: true           // Better display on retina screens
+            });
+            
+            console.log('Particles initialized successfully');
+        } else {
+            console.error('Particles.js library not loaded');
+        }
+    }
+
+    // Wait for DOM to fully load
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set background image
+        setBackgroundImage();
+        
+        // Initialize particles
+        initParticles();
+        
+        // Initialize carousel
+        initCarousel();
+    });
+    
+    // Optional: Handle window resize to maintain proper sizing
+    window.addEventListener('resize', function() {
+        // Refresh particles if needed
+        if (typeof pJSDom !== 'undefined' && pJSDom.length > 0) {
+            // pJSDom[0].pJS.fn.vendors.densityAutoParticles();
+        }
+    });
+</script>
+
+</body>
+</html>

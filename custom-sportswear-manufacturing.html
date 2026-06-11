@@ -1,0 +1,245 @@
+
+    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        .custom-section {
+        	background: url(https://fibraglobalindustry.com/wp-content/uploads/2025/01/side-by-side-through-the-city-53KWDEK.jpg);
+            position: relative;
+            width: 100%;
+            font-style: italic;
+            overflow: hidden;
+            background-position: center center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+		    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    		padding: 6em 1em 6em 0em;
+        }
+
+        .custom-overlay {
+        	z-index: 1;
+            background-color: transparent;
+		    background-image: radial-gradient(at center center, #000000 7%, #090808 75%);
+		    opacity: 1;
+		    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+        }
+
+        .custom-container {
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .custom-column {
+            background: #fff;
+            backdrop-filter: blur(2px);
+            border-radius: 0px 90px 90px 0px;
+            overflow: hidden;
+            margin: 0% 6% 0% 0%;
+        }
+
+        .inner-row {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 7px 0px 7px 0px;
+        }
+
+        .left-col {
+        	background-image: url(https://fibraglobalindustry.com/wp-content/uploads/2025/02/expert-in-manufacturing-1024x683-1.jpg);
+		    background-position: center center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+            flex: 1.5;
+            min-width: 320px;
+            backdrop-filter: blur(4px);
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items: center;
+            text-align: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0px 90px 90px 0px;
+        }
+
+        .custom-spacer {
+            height: 40px;
+            width: 100%;
+        }
+
+        .difference-title {
+            font-family: 'Saira', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: left;
+            letter-spacing: 0.05em;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+            margin-top: 1rem;
+            margin-bottom: initial;
+            -webkit-text-stroke-color: #fff;
+            -webkit-text-stroke-width: 2px;
+    		stroke-width: 2px;
+    		stroke: #fff;
+    		color: transparent;
+        }
+
+        .right-col {
+            flex: 1;
+            min-width: 280px;
+            padding: 3rem 2.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(4px);
+        }
+
+        .about-label {
+            font-family: 'Saira', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #7ab3c8;
+            display: inline-block;
+        }
+
+        .main-heading {
+            font-family: 'Saira', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin: 0px;
+            line-height: 1.2;
+            stroke-width: 1px;
+            letter-spacing: -0.01em;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: #000;
+		    stroke: #000;
+		    color: #00000000;
+        }
+
+        .description-text {
+            font-family: 'Saira', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            color: #000;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .custom-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            color: #000;
+            font-family: 'Saira', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 12px 32px;
+            border-radius: 10px;
+            border: 1px solid #000; 
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .custom-button:hover {
+            background: #1f5578;
+            color: #fff;
+            transform: scale(0.98);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .button-wrapper {
+            display: inline-block;
+        }
+        .button-wrapper:hover .custom-button {
+            transform: scale(0.95);
+            background: #1f5578;
+        }
+
+        @media (max-width: 900px) {
+            .inner-row {
+                flex-direction: column;
+            }
+            .left-col {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 2rem 1.5rem;
+            }
+            .difference-title {
+                font-size: 2.5rem;
+            }
+            .main-heading {
+                font-size: 1.8rem;
+            }
+            .right-col {
+                padding: 2rem 1.8rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .custom-container {
+                padding: 0 16px;
+            }
+            .difference-title {
+                font-size: 2rem;
+            }
+            .main-heading {
+                font-size: 1.5rem;
+            }
+            .description-text {
+                font-size: 0.9rem;
+            }
+            .custom-button {
+                padding: 10px 24px;
+                font-size: 0.9rem;
+            }
+            .custom-column {
+                margin: 2rem 0;
+            }
+            .right-col {
+                padding: 1.8rem;
+            }
+        }
+
+        .difference-title {
+            animation: fadeInUp 0.8s ease;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <section class="custom-section">
+        <div class="custom-overlay"></div>
+        <div class="custom-container">
+            <div class="custom-column">
+                <div class="inner-row">
+                    <div class="left-col">
+                        <h3 class="difference-title">MAKE<br>DIFFERENCE+</h3>
+                    </div>
+                    <div class="right-col">
+                        <div class="about-label">About Fibra Global Industry</div>
+                        <h2 class="main-heading">custom sportswear manufacturing</h2>
+                        <p class="description-text">
+                            We make it simple to bring your entire custom clothing to life without the need for third-party involvement. From concept to creation, our dedicated production team works closely with you. Our customization service uses smart and creative methods to make clothes of better quality and style.
+                        </p>
+                        <div class="button-wrapper">
+                            <a href="https://fibraglobalindustry.com/about-us/" class="custom-button">
+                                Read More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
